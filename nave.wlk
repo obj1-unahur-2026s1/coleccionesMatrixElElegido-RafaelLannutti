@@ -69,7 +69,7 @@ object nave {
     }
 
     method vitalidadesDePasajeros(){
-        return pasajeros.map ({p => p.vitalidad()})
+        return pasajeros.map ({p => p.vitalidad()}) // si tengo una lista obtengo un conjunto y viceversa
     }
 
     method ordernarDeMenorVitalidadAMayor() {
@@ -77,5 +77,16 @@ object nave {
         p1,p2 => 
         p1.vitalidad () < p2.vitalidad()
       })
+    }
+
+    method cualquierPasajero() {
+      return pasajeros.anyOne()
+    }
+
+    method vitalidadesOrdenadas() {
+        return self.vitalidadesDePasajeros().sortBy({
+            v1,v2 => v1 < v2
+        })
+      
     }
 }
