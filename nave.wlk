@@ -89,4 +89,8 @@ object nave {
         })
       
     }
+     
+    method cantidadDeElegidosEnLaNave (){
+        return pasajeros.count({p =>p.esElElegido() })
+    }
 }
